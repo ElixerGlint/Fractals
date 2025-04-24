@@ -4,10 +4,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
-public class Mondy extends JPanel implements MouseListener, KeyListener {
+public class Mondy extends JPanel implements MouseListener, KeyListener, MouseMotionListener {
     private int width;
     private int height;
     private int depth;
@@ -17,7 +18,7 @@ public class Mondy extends JPanel implements MouseListener, KeyListener {
     public Mondy(int w, int h, int d) {
         this.addMouseListener(this);
         this.addKeyListener(this);
-        this.setFocusable(true);
+        this.setFocusable(true); //KEY CLICK INPUTS WONT WORK UNLESS THIS EXISTS
         width = w;
         height = h;
         depth = d;
@@ -110,5 +111,17 @@ public class Mondy extends JPanel implements MouseListener, KeyListener {
     public void keyReleased(KeyEvent e) {
         // TODO Auto-generated method stub
         
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        // TODO Auto-generated method stub
+        // throw new UnsupportedOperationException("Unimplemented method 'mouseDragged'");
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        // TODO Auto-generated method stub
+        // throw new UnsupportedOperationException("Unimplemented method 'mouseMoved'");
     }
 }
