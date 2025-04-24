@@ -1,11 +1,13 @@
 ﻿import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
-public class Mondy extends JPanel implements MouseListener {
+public class Mondy extends JPanel implements MouseListener, KeyListener {
     private int width;
     private int height;
     private int depth;
@@ -14,6 +16,8 @@ public class Mondy extends JPanel implements MouseListener {
 
     public Mondy(int w, int h, int d) {
         this.addMouseListener(this);
+        this.addKeyListener(this);
+        this.setFocusable(true);
         width = w;
         height = h;
         depth = d;
@@ -85,5 +89,26 @@ public class Mondy extends JPanel implements MouseListener {
     public void mouseExited(MouseEvent e) {
         // TODO Auto-generated method stub
        // throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        // TODO Auto-generated method stub
+        if(e.getKeyChar() == '8') {
+            depth = 8;
+            this.repaint();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        // TODO Auto-generated method stub
+        
     }
 }
